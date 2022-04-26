@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    background: #333;
+
+     background:url(../image/2.jpeg) no-repeat center top;
+     background-size:cover;
+     background-attachment:fixed;
+
+}
+#title{
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    top: 0;
+    left: 30%;
+    /*background: #333333;*/
+    color: white;
+    font-size: 30px;
+    /*居中分布*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:default;
+}
+#time{
+    position: absolute;
+    color: white;
+    width: 30%;
+    height: 10%;
+    top: 0;
+    right: 0;
+}
+#jump{
+    position:absolute;
+    color: white
+}
+
+/*数字显示*/
+.num{
+    width: 22%;
+    float: left;
+    color: gold;
+    font-size: 14px;
+    /*居中分布*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.txt{
+    width: 22%;
+    float: left;
+    color: white;
+    font-family: "幼圆";
+    /*居中分布*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#l1{
+    position: absolute;
+    width: 25%;
+    height: 45%;
+    top: 10%;
+    left: 0%;
+    /*background: #333333;*/
+}
+#l2{
+    position: absolute;
+    width: 25%;
+    height: 45%;
+    top: 55%;
+    left: 0%;
+    /*background: #333333;*/
+}
+#c1{
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top: 8%;
+    left: 28%;
+    /*background: #333333;*/
+}
+#c2{
+    position: absolute;
+    width: 40%;
+    height: 55%;
+    top: 45%;
+    left: 25%;
+    /*background: #333333;*/
+}
+#r1{
+    position: absolute;
+    width: 35%;
+    height: 45%;
+    top: 10%;
+    right: 0%;
+    /*background: #666666;*/
+}
+#r2{
+    position: absolute;
+    width: 35%;
+    height: 45%;
+    top: 55%;
+    right: 0%;
+    /*background: #333333;*/
+}
