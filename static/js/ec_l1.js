@@ -1,12 +1,11 @@
 var ec_left1=echarts.init(document.getElementById("l1"),"dark")
 
-
 var ec_left1_option = {
     textStyle:{
         color:'white'
     },
     title: {
-        text: '全国累计趋势',
+        text: "",
         left: "auto"
     },
     backgroundColor:"",

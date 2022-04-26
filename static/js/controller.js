@@ -1,3 +1,5 @@
+
+
 function get_c1_data() {
     $.ajax({
         url: "/c1?region=" + sessionStorage.getItem("region"),
@@ -57,6 +59,7 @@ function get_l1_data() {
             ec_left1_option.series[0].data = data.dignose
             ec_left1_option.series[1].data = data.heal
             ec_left1_option.series[2].data = data.dead
+            ec_left1_option.title.text = sessionStorage.getItem("region")==="china"?"全国累计趋势":"全球累计趋势"
             ec_left1.setOption(ec_left1_option)
         },
         error: function (xhr, type, errorThrown) {
@@ -74,6 +77,7 @@ function get_l2_data() {
             ec_left2_option.series[0].data = data.dignose
             ec_left2_option.series[1].data = data.heal
             ec_left2_option.series[2].data = data.dead
+            ec_left2_option.title.text = sessionStorage.getItem("region")==="china"?"全国新增趋势":"全球新增趋势"
             ec_left2.setOption(ec_left2_option)
         },
         error: function (xhr, type, errorThrown) {
@@ -89,6 +93,7 @@ function get_r1_data() {
         success: function (data) {
             ec_right1_option.xAxis[0].data = data.keys
             ec_right1_option.series[0].data = data.values
+            ec_right1_option.title.text = sessionStorage.getItem("region")==="china"?"全国地区现存确诊人数top10":"全球地区累计确诊人数top10"
             ec_right1.setOption(ec_right1_option)
         },
         error: function (xhr, type, errorThrown) {

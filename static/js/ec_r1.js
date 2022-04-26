@@ -1,6 +1,5 @@
 var ec_right1 = echarts.init(document.getElementById("r1"), "dark")
 
-var title = sessionStorage.getItem("region")==="china"?"全国地区现存确诊人数top10":"全球地区累计确诊人数top10"
 var ec_right1_option = {
 
     tooltip: {
@@ -10,7 +9,7 @@ var ec_right1_option = {
         }
     },
     title: {
-        text: title,
+        text: "",
         left: "left"
     },
     backgroundColor:"",

@@ -5,7 +5,7 @@ var ec_left2_option = {
         color:'white'
     },
     title: {
-        text: '全国新增趋势',
+        text: "",
         left: "auto"
     },
     tooltip: {
