@@ -10,7 +10,7 @@ import requests
 from sqlalchemy import create_engine
 
 from translate import COUNTRIES_CH_EN_DICT
-import time
+from conifg import CONFIG
 
 def traslate(word):
     '''
@@ -23,7 +23,7 @@ def traslate(word):
 def save_data(df, table_name, if_exists="append", need_translate=False):
     if need_translate:
         df['name'] = df['疫情地区'].apply(traslate)
-    conn = create_engine('mysql://root:123456@localhost:3306/myspider?charset=utf8')
+    conn = create_engine(f'mysql://{CONFIG["user"]}:{CONFIG["password"]}@{CONFIG["host"]}:3306/{CONFIG["db_name"]}?charset=utf8')
     pd.io.sql.to_sql(df, table_name, con=conn, if_exists=if_exists, index=None)
 
 
@@ -148,8 +148,8 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-    # print("爬取完成")
-    url = "https://news.qq.com/zt2020/page/feiyan.htm#/"
-    df = pd.read_html(url)
-    table = df[2]
+    main()
+    print("爬取完成")
+    # url = "https://news.qq.com/zt2020/page/feiyan.htm#/"
+    # df = pd.read_html(url)
+    # table = df[2]

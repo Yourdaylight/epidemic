@@ -113,4 +113,4 @@ if __name__ == '__main__':
     scheduler = BackgroundScheduler()
     scheduler.add_job(crawl_daily_data, 'interval', days=1)
     scheduler.start()
-    app.run()
+    app.run(host="0.0.0.0")

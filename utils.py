@@ -38,7 +38,7 @@ class utils:
         """
         # 使用pandas从数据库中读取疫情数据
         try:
-            conn = create_engine('mysql://{}:{}@localhost:3306/{}?charset=utf8'.format(self.user, self.password, self.db_name))
+            conn = create_engine('mysql://{}:{}@{}:3306/{}?charset=utf8'.format(self.user, self.password, self.host,self.db_name))
             sql = use_sql if use_sql else "select * from {}".format(table_name)
             epidemic = pd.read_sql(sql, con=conn)
             return epidemic
