@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 
 
@@ -14,7 +15,7 @@ class Generate:
 
     def generate_dockerfile(self, work_dir="/usr/src/app", main_file="app.py"):
         # 首先生成dockerfile模板,python版本通过命令行获取
-        python_version = get_cmd("python -V").replace("Python", "").strip()
+        python_version = sys.version.split(" ")[0]
         template = f"""
 FROM python:{python_version}
 WORKDIR {work_dir}
@@ -47,12 +48,14 @@ CMD [ "python", "{work_dir}/{main_file}" ]
         return False
 
     def run_container(self, container_name, local_port=5001, container_port=5000):
-        cmd = f"docker run -it -p {local_port} {container_port} --name {container_name} {self.image_name}"
-        print(get_cmd(cmd))
+        cmd = f"docker run -p {local_port}:{container_port} --name {container_name} {self.image_name}"
+        #cmd = f"docker run {self.image_name}"
+        print(cmd)
+        os.system(cmd)
 
 
 if __name__ == '__main__':
-    generate = Generate(dockerfile_name="generate_dockerfile.dockerfile", image_name="lzh")
+    generate = Generate(dockerfile_name="generate_dockerfile.dockerfile", image_name="epidemic")
     generate.generate_dockerfile()
     generate.build_image()
-    generate.run_container(container_name="test_container", local_port=5001, container_port=5000)
+    generate.run_container(container_name="epidemic_container", local_port=5001, container_port=5000)
